@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Will's Home Remodeling | Palmyra, NJ</title>
+  <meta name="description" content="Bathrooms, kitchens, tile, flooring, decks, drywall, and home remodeling from Will's Home Remodeling in Palmyra, New Jersey.">
+  <link rel="icon" href="assets/whr-mark-light.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --oxblood-900: oklch(25% 0.075 20);
+      --oxblood-800: oklch(31% 0.09 20);
+      --oxblood-700: oklch(38% 0.105 20);
+      --brass-600: oklch(68% 0.09 82);
+      --brass-500: oklch(75% 0.075 82);
+      --charcoal-950: oklch(20% 0.012 56);
+      --charcoal-900: oklch(24% 0.012 56);
+      --charcoal-700: oklch(39% 0.012 56);
+      --charcoal-500: oklch(55% 0.012 56);
+      --parchment-100: oklch(94% 0.023 83);
+      --parchment-50: oklch(97% 0.014 83);
+      --line-dark: oklch(31% 0.02 45);
+      --line-light: oklch(85% 0.025 82);
+      --success: oklch(54% 0.11 145);
+      --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+      --font-body: "Source Sans 3", system-ui, sans-serif;
+      --space-xs: .5rem;
+      --space-sm: .75rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4.5rem;
+      --space-4xl: 6rem;
+      --shell: min(80rem, calc(100% - 2rem));
+      --focus: 0 0 0 3px var(--parchment-50), 0 0 0 6px var(--brass-500);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body {
+      margin: 0;
+      min-width: 20rem;
+      color: var(--charcoal-950);
+      background: var(--parchment-100);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.5;
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+      overflow-x: clip;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: .16;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: none; box-shadow: var(--focus); }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .shell { width: var(--shell); margin-inline: auto; }
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -5rem;
+      z-index: 200;
+      padding: .75rem 1rem;
+      color: var(--parchment-50);
+      background: var(--oxblood-800);
+    }
+    .skip-link:focus { top: 1rem; }
+
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      color: var(--parchment-50);
+      background: var(--charcoal-950);
+      border-bottom: 1px solid oklch(42% 0.04 52);
+    }
+    .nav {
+      min-height: 5.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      min-width: 0;
+    }
+    .brand-mark { width: 4.25rem; height: 3.1rem; flex: none; }
+    .brand-copy { min-width: 0; }
+    .brand-name {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 900;
+      line-height: .9;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .brand-loc {
+      display: block;
+      margin-top: .35rem;
+      color: var(--brass-500);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.6rem;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .nav-links > a:not(.nav-call) { padding-block: 1rem; color: var(--parchment-100); }
+    .nav-links > a:not(.nav-call):hover { color: var(--brass-500); }
+    .nav-call {
+      min-height: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .65rem 1.1rem;
+      color: var(--charcoal-950);
+      background: var(--brass-500);
+      border: 1px solid var(--brass-500);
+    }
+    .nav-call:hover { background: var(--parchment-50); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--parchment-50);
+      background: var(--oxblood-900);
+    }
+    .hero::after {
+      content: "PROJECT 01";
+      position: absolute;
+      right: -.2em;
+      bottom: -.18em;
+      color: oklch(34% 0.088 20);
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 18vw, 18rem);
+      font-weight: 900;
+      line-height: .75;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: var(--space-2xl);
+      padding-block: clamp(3.25rem, 8vw, 7rem);
+    }
+    .hero-copy { min-width: 0; align-self: center; }
+    .project-stamp {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1.4rem;
+      color: var(--brass-500);
+      font-family: var(--font-display);
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .project-stamp::before { content: ""; width: 2.5rem; height: 2px; background: currentColor; }
+    h1 {
+      max-width: 10ch;
+      font-family: var(--font-display);
+      font-size: clamp(3.7rem, 12vw, 8.6rem);
+      font-weight: 900;
+      line-height: .78;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+    h1 span { display: block; color: var(--brass-500); }
+    .hero-lead {
+      width: 100%;
+      max-width: 39rem;
+      margin-top: 1.8rem;
+      color: oklch(89% 0.02 82);
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+      line-height: 1.55;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+    .btn {
+      min-height: 3.35rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .78rem 1.2rem;
+      border: 1px solid transparent;
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: transform 180ms cubic-bezier(.16, 1, .3, 1), background 180ms ease, color 180ms ease;
+    }
+    .btn-primary { color: var(--charcoal-950); background: var(--brass-500); border-color: var(--brass-500); }
+    .btn-secondary { color: var(--parchment-50); background: transparent; border-color: oklch(73% 0.04 55); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--parchment-50); }
+    .btn-secondary:hover { color: var(--charcoal-950); background: var(--parchment-50); }
+    .hero-photo-wrap {
+      position: relative;
+      min-width: 0;
+      min-height: 28rem;
+      align-self: stretch;
+      border: 1px solid var(--brass-500);
+      border-bottom-width: .7rem;
+      background: var(--charcoal-900);
+    }
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 28rem;
+      object-fit: cover;
+      object-position: 48% center;
+      filter: saturate(.82) contrast(1.03);
+    }
+
+    .hero-registration {
+      margin-top: 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      color: oklch(82% 0.025 82);
+      font-size: .9rem;
+    }
+    .hero-registration strong { color: var(--parchment-50); }
+    .hero-registration::before {
+      content: "NJ";
+      min-width: 2.4rem;
+      padding: .2rem .35rem;
+      color: var(--oxblood-900);
+      background: var(--brass-500);
+      font-family: var(--font-display);
+      font-weight: 900;
+      text-align: center;
+    }
+    .measure-rule {
+      position: relative;
+      z-index: 3;
+      height: 3.5rem;
+      border-top: 2px solid var(--brass-500);
+      border-bottom: 2px solid var(--brass-500);
+      background-image: repeating-linear-gradient(90deg, transparent 0 1.48rem, var(--brass-600) 1.5rem 1.56rem);
+      opacity: .68;
+    }
+
+    .proof-bar { background: var(--charcoal-950); color: var(--parchment-50); }
+    .proof-grid { display: grid; }
+    .proof {
+      padding: 1.45rem 1rem 1.45rem 0;
+      border-bottom: 1px solid var(--charcoal-700);
+    }
+    .proof:last-child { border-bottom: 0; }
+    .proof strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--brass-500);
+    }
+    .proof span { display: block; margin-top: .4rem; color: oklch(81% 0.018 78); font-size: .88rem; }
+
+    section { scroll-margin-top: 6rem; }
+    .section-pad { padding-block: clamp(4.5rem, 9vw, 8rem); }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      color: var(--oxblood-700);
+      font-family: var(--font-display);
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-label::before { content: ""; width: 2.5rem; height: 2px; background: currentColor; }
+    h2 {
+      margin-top: .9rem;
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      font-weight: 900;
+      line-height: .84;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+    .section-intro { max-width: 43rem; margin-top: 1.2rem; color: var(--charcoal-700); font-size: 1.12rem; }
+
+    .services-layout { display: grid; gap: var(--space-2xl); }
+    .services-heading { align-self: start; }
+    .service-list { border-top: 2px solid var(--oxblood-800); }
+    .service-row {
+      display: grid;
+      grid-template-columns: 3.4rem 1fr;
+      gap: 1rem;
+      padding-block: 1.35rem;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .service-num {
+      color: var(--oxblood-700);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    .service-row h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .service-row p { grid-column: 2; max-width: 39rem; margin-top: .65rem; color: var(--charcoal-700); }
+
+    .feature-work { color: var(--parchment-50); background: var(--oxblood-800); }
+    .feature-work .section-label { color: var(--brass-500); }
+    .feature-work-grid { display: grid; gap: var(--space-2xl); }
+    .feature-copy { align-self: center; }
+    .feature-copy h2 { max-width: 8ch; }
+    .feature-copy p { max-width: 36rem; margin-top: 1.25rem; color: oklch(88% 0.02 82); font-size: 1.08rem; }
+    .project-notes {
+      margin-top: 2rem;
+      border-top: 1px solid oklch(57% 0.07 30);
+    }
+    .project-note {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      gap: 1rem;
+      padding-block: .9rem;
+      border-bottom: 1px solid oklch(57% 0.07 30);
+      font-size: .92rem;
+    }
+    .project-note strong { color: var(--brass-500); font-family: var(--font-display); letter-spacing: .08em; text-transform: uppercase; }
+    .feature-image { position: relative; min-height: 31rem; border: 1px solid var(--brass-500); }
+    .feature-image img { width: 100%; height: 100%; min-height: 31rem; object-fit: cover; object-position: center; }
+
+    .range-grid { display: grid; gap: var(--space-2xl); align-items: center; }
+    .range-image { position: relative; min-height: 28rem; border: 1px solid var(--charcoal-950); border-right-width: .65rem; }
+    .range-image img { width: 100%; height: 100%; min-height: 28rem; object-fit: cover; object-position: center; }
+    .range-copy h2 { max-width: 9ch; }
+    .range-copy .section-intro { max-width: 34rem; }
+    .capability-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.6rem; }
+    .capability-tags span {
+      padding: .55rem .75rem;
+      border: 1px solid var(--charcoal-500);
+      color: var(--charcoal-900);
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .owner { color: var(--charcoal-950); background: var(--brass-500); }
+    .owner-grid { display: grid; gap: var(--space-2xl); align-items: center; }
+    .owner-mark {
+      min-height: 22rem;
+      display: grid;
+      place-items: center;
+      background: var(--charcoal-950);
+      border-bottom: .75rem solid var(--oxblood-800);
+    }
+    .owner-mark img { width: min(15rem, 65%); }
+    .owner .section-label { color: var(--oxblood-800); }
+    .owner-copy h2 { max-width: 10ch; }
+    .owner-copy p { max-width: 43rem; margin-top: 1.1rem; font-size: 1.08rem; }
+    .owner-facts { margin-top: 1.8rem; border-top: 2px solid var(--charcoal-950); }
+    .owner-fact { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding-block: .75rem; border-bottom: 1px solid oklch(49% 0.07 67); }
+    .owner-fact strong { font-family: var(--font-display); letter-spacing: .05em; text-transform: uppercase; }
+
+    .process { background: var(--parchment-50); }
+    .process-grid { display: grid; gap: 0; margin-top: 2.6rem; border-top: 2px solid var(--oxblood-800); }
+    .process-step {
+      display: grid;
+      grid-template-columns: 3.25rem 1fr;
+      gap: 1rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .process-step strong { color: var(--oxblood-700); font-family: var(--font-display); font-size: 1.25rem; }
+    .process-step h3 { font-family: var(--font-display); font-size: 1.7rem; text-transform: uppercase; }
+    .process-step p { max-width: 34rem; margin-top: .45rem; color: var(--charcoal-700); }
+
+    .contact { color: var(--parchment-50); background: var(--charcoal-950); }
+    .contact-grid { display: grid; gap: var(--space-2xl); }
+    .contact .section-label { color: var(--brass-500); }
+    .contact h2 { max-width: 9ch; }
+    .contact-copy > p { max-width: 37rem; margin-top: 1.3rem; color: oklch(83% 0.02 82); font-size: 1.08rem; }
+    .direct-links { display: grid; gap: .65rem; margin-top: 1.7rem; }
+    .direct-links a { width: fit-content; color: var(--brass-500); font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; letter-spacing: .03em; }
+    .direct-links a:hover { color: var(--parchment-50); }
+    .estimate-form {
+      display: grid;
+      gap: .85rem;
+      padding: 1.25rem;
+      color: var(--charcoal-950);
+      background: var(--parchment-50);
+      border-top: .7rem solid var(--brass-500);
+    }
+    .form-row { display: grid; gap: .85rem; }
+    .field { display: grid; gap: .35rem; }
+    .field label { font-family: var(--font-display); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      min-height: 3rem;
+      padding: .7rem .8rem;
+      color: var(--charcoal-950);
+      background: var(--parchment-50);
+      border: 1px solid var(--charcoal-500);
+      border-radius: 0;
+    }
+    .field textarea { min-height: 7.5rem; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--charcoal-700); opacity: 1; }
+    .form-submit { width: 100%; border: 0; cursor: pointer; }
+
+    .form-status { min-height: 1.5rem; font-weight: 700; }
+    .form-status.success { color: var(--success); }
+
+    .site-footer { padding-block: 2.3rem 6rem; color: oklch(81% 0.02 78); background: var(--oxblood-900); }
+    .footer-grid { display: grid; gap: 1.5rem; }
+    .footer-brand { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; }
+    .footer-links a { text-decoration: underline; text-underline-offset: .2em; }
+    .footer-meta { max-width: 48rem; font-size: .82rem; color: oklch(73% 0.025 73); }
+
+    .mobile-call {
+      position: fixed;
+      left: .75rem;
+      right: .75rem;
+      bottom: max(.75rem, env(safe-area-inset-bottom));
+      z-index: 120;
+      min-height: 3.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--charcoal-950);
+      background: var(--brass-500);
+      border: 2px solid var(--charcoal-950);
+      box-shadow: 0 .8rem 2rem oklch(17% 0.02 30 / .28);
+      font-family: var(--font-display);
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+
+    @media (min-width: 42rem) {
+      :root { --shell: min(80rem, calc(100% - 3.5rem)); }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof { padding: 1.65rem; border-right: 1px solid var(--charcoal-700); }
+      .proof:nth-child(2n) { border-right: 0; }
+      .proof:nth-last-child(-n+2) { border-bottom: 0; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(odd) { padding-right: 1.5rem; border-right: 1px solid var(--line-light); }
+      .process-step:nth-child(even) { padding-left: 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr auto; align-items: start; }
+      .footer-meta { grid-column: 1 / -1; }
+    }
+
+    @media (min-width: 64rem) {
+      .nav-links { display: flex; }
+      .hero-grid { grid-template-columns: .88fr 1.12fr; min-height: 42rem; }
+      .hero-copy { padding-right: 1rem; }
+      .hero-photo-wrap, .hero-photo { min-height: 38rem; }
+      .proof-grid { grid-template-columns: repeat(4, 1fr); }
+      .proof { border-bottom: 0; }
+      .proof:nth-child(2n) { border-right: 1px solid var(--charcoal-700); }
+      .proof:last-child { border-right: 0; }
+      .services-layout { grid-template-columns: .72fr 1.28fr; gap: 5rem; }
+      .services-heading { position: sticky; top: 8rem; }
+      .service-row { grid-template-columns: 4rem 17rem 1fr; align-items: start; padding-block: 1.55rem; }
+      .service-row p { grid-column: auto; margin-top: 0; }
+      .feature-work-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; }
+      .range-grid { grid-template-columns: 1.15fr .85fr; gap: 4.5rem; }
+      .owner-grid { grid-template-columns: .78fr 1.22fr; gap: 4.5rem; }
+      .process-grid { grid-template-columns: repeat(4, 1fr); }
+      .process-step { display: block; padding: 1.5rem; border-right: 1px solid var(--line-light); border-bottom: 0; }
+      .process-step:nth-child(even), .process-step:nth-child(odd) { padding: 1.5rem; }
+      .process-step:last-child { border-right: 0; }
+      .process-step strong { display: block; margin-bottom: 2.4rem; }
+      .contact-grid { grid-template-columns: .85fr 1.15fr; gap: 5rem; align-items: start; }
+      .estimate-form { padding: 1.7rem; }
+      .mobile-call { display: none; }
+      .site-footer { padding-bottom: 2.3rem; }
+    }
+
+    @media (pointer: coarse) {
+      .btn, .nav-call { min-height: 3.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+
+    }
+  </style>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Will's Home Remodeling home">
+        <img class="brand-mark" src="assets/whr-mark-dark.svg" alt="">
+        <span class="brand-copy">
+          <span class="brand-name">Will's Home Remodeling</span>
+          <span class="brand-loc">Palmyra, New Jersey</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Estimate</a>
+        <a class="nav-call" href="tel:+18564263629">Call (856) 426-3629</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="project-stamp">Palmyra-based remodeling</div>
+          <h1>Where there's a Will, <span>there's a way.</span></h1>
+          <p class="hero-lead">Bathrooms, kitchens, tile, flooring, decks, drywall, and practical home improvements from an owner-led New Jersey remodeling business.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request an estimate</a>
+            <a class="btn btn-secondary" href="tel:+18564263629">Call Will</a>
+          </div>
+          <div class="hero-registration">
+            <div><strong>Active NJ home-improvement registration</strong><br>HIC Reg. #13VH08394500</div>
+          </div>
+        </div>
+        <div class="hero-photo-wrap reveal">
+          <img class="hero-photo" src="assets/project-vanity.jpg" width="1080" height="1140" alt="Finished double-sink bathroom vanity with brass fixtures and herringbone tile floor">
+        </div>
+      </div>
+      <div class="measure-rule" aria-hidden="true"></div>
+    </section>
+
+    <aside class="proof-bar" aria-label="Public business trust signals">
+      <div class="shell proof-grid">
+        <a class="proof" href="https://www.thumbtack.com/nj/west-berlin/tile/wills-home-remodeling/service/230945437999981795" target="_blank" rel="noopener noreferrer">
+          <strong>4.8 / 59</strong><span>Thumbtack rating and reviews</span>
+        </a>
+        <a class="proof" href="https://nextdoor.com/pages/wills-home-remodeling-llc-west-berlin-nj" target="_blank" rel="noopener noreferrer">
+          <strong>2025</strong><span>Nextdoor Neighborhood Faves post</span>
+        </a>
+        <a class="proof" href="https://www.facebook.com/willshomeremodeling" target="_blank" rel="noopener noreferrer">
+          <strong>100%</strong><span>Recommend on Facebook, 12 reviews</span>
+        </a>
+        <a class="proof" href="https://newjersey.mylicense.com/verification/Search.aspx?facility=Y" target="_blank" rel="noopener noreferrer">
+          <strong>Active</strong><span>NJ registration verified July 2026</span>
+        </a>
+      </div>
+    </aside>
+
+    <section class="section-pad" id="services">
+      <div class="shell services-layout">
+        <div class="services-heading reveal">
+          <div class="section-label">What Will does</div>
+          <h2>One call. A wide range of work.</h2>
+          <p class="section-intro">From full-room updates to focused repairs, Will handles interior and exterior work with an emphasis on bathrooms, tile, and finish details.</p>
+        </div>
+        <div class="service-list reveal">
+          <article class="service-row">
+            <div class="service-num">01</div><h3>Bathrooms</h3><p>Full bathroom remodels, powder rooms, tile, vanities, fixtures, and shower updates.</p>
+          </article>
+          <article class="service-row">
+            <div class="service-num">02</div><h3>Kitchens</h3><p>Kitchen updates, backsplashes, flooring, finish carpentry, and practical improvements.</p>
+          </article>
+          <article class="service-row">
+            <div class="service-num">03</div><h3>Tile & Flooring</h3><p>Floor and wall tile, backsplashes, fireplaces, flooring, and detailed finish work.</p>
+          </article>
+          <article class="service-row">
+            <div class="service-num">04</div><h3>Interior Work</h3><p>Drywall, finished basements, windows, doors, trim, painting, and home repairs.</p>
+          </article>
+          <article class="service-row">
+            <div class="service-num">05</div><h3>Exterior Work</h3><p>Decks, porch repairs, fencing, and selected exterior door and window projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-work section-pad" id="work">
+      <div class="shell feature-work-grid">
+        <div class="feature-copy reveal">
+          <div class="section-label">Recent work</div>
+          <h2>Good work shows in the details.</h2>
+          <p>Clean tile lines, thoughtful layouts, and practical improvements that make a room work better every day.</p>
+          <div class="project-notes">
+            <div class="project-note"><strong>Recent post</strong><span>Bathroom remodel in Voorhees</span></div>
+            <div class="project-note"><strong>Recent post</strong><span>Powder-room retile, before and after</span></div>
+            <div class="project-note"><strong>Recent post</strong><span>Exterior porch, window, and door work</span></div>
+            <div class="project-note"><strong>Recent post</strong><span>Tiled fireplace, before and after</span></div>
+          </div>
+        </div>
+        <div class="feature-image reveal">
+          <img src="assets/project-shower.jpg" width="1000" height="1334" loading="lazy" alt="Finished shower with marble-look wall tile, pebble floor, niche, and handheld shower fixture">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="shell range-grid">
+        <div class="range-image reveal">
+          <img src="assets/project-fireplace.jpg" width="1000" height="1170" loading="lazy" alt="Finished fireplace surround with herringbone tile and gray wood-look flooring">
+        </div>
+        <div class="range-copy reveal">
+          <div class="section-label">Broad capability</div>
+          <h2>Details that change a room.</h2>
+          <p class="section-intro">Bathrooms and tile are a strong part of the work, with the experience to take on kitchens, flooring, drywall, decks, windows, doors, and other home improvements.</p>
+          <div class="capability-tags" aria-label="Service capabilities">
+            <span>Bathrooms</span><span>Kitchens</span><span>Backsplashes</span><span>Flooring</span><span>Drywall</span><span>Basements</span><span>Decks</span><span>Windows</span><span>Doors</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="owner section-pad" id="about">
+      <div class="shell owner-grid">
+        <div class="owner-mark reveal">
+          <img src="assets/whr-mark-dark.svg" width="180" height="132" alt="WHR roofline mark">
+        </div>
+        <div class="owner-copy reveal">
+          <div class="section-label">Owner-led remodeling</div>
+          <h2>A real name behind the work.</h2>
+          <p>Will's Home Remodeling LLC is owned by William Ferris and based in Palmyra, New Jersey. Call or email Will directly to talk through the room, repair, or improvement you have in mind.</p>
+          <div class="owner-facts">
+            <div class="owner-fact"><strong>Owner</strong><span>William Ferris</span></div>
+            <div class="owner-fact"><strong>Based in</strong><span>Palmyra, New Jersey</span></div>
+            <div class="owner-fact"><strong>Registered</strong><span>NJ HIC #13VH08394500</span></div>
+            <div class="owner-fact"><strong>Contact</strong><span>(856) 426-3629</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad">
+      <div class="shell">
+        <div class="section-label reveal">Simple contact path</div>
+        <h2 class="reveal">From idea to estimate.</h2>
+        <div class="process-grid reveal">
+          <article class="process-step"><strong>01</strong><div><h3>Tell Will</h3><p>Share the room, repair, or improvement you are considering.</p></div></article>
+          <article class="process-step"><strong>02</strong><div><h3>Schedule</h3><p>Arrange a time to discuss the work and inspect the space.</p></div></article>
+          <article class="process-step"><strong>03</strong><div><h3>Review</h3><p>Confirm the scope, material expectations, timing, and estimate.</p></div></article>
+          <article class="process-step"><strong>04</strong><div><h3>Build</h3><p>Move forward once the project details are clear and approved.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="shell contact-grid">
+        <div class="contact-copy reveal">
+          <div class="section-label">Start a conversation</div>
+          <h2>What do you want to improve?</h2>
+          <p>Call Will directly or send the project details below to start the conversation.</p>
+          <div class="direct-links">
+            <a href="tel:+18564263629">(856) 426-3629</a>
+            <a href="mailto:ferris-william@comcast.net">ferris-william@comcast.net</a>
+          </div>
+        </div>
+        <form class="estimate-form reveal" id="estimate-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Best number to call"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="town">Town</label><input id="town" name="town" autocomplete="address-level2" required placeholder="Project location"></div>
+            <div class="field"><label for="project">Project type</label><select id="project" name="project" required><option value="">Choose one</option><option>Bathroom</option><option>Kitchen</option><option>Tile or flooring</option><option>Basement or drywall</option><option>Deck or exterior</option><option>Other home improvement</option></select></div>
+          </div>
+          <div class="field"><label for="details">Project details</label><textarea id="details" name="details" required placeholder="What would you like to change or repair?"></textarea></div>
+          <button class="btn btn-primary form-submit" type="submit">Email project details</button>
+          <div class="form-status" id="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">Will's Home Remodeling LLC</div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/willshomeremodeling" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.thumbtack.com/nj/west-berlin/tile/wills-home-remodeling/service/230945437999981795" target="_blank" rel="noopener noreferrer">Thumbtack</a>
+        <a href="https://nextdoor.com/pages/wills-home-remodeling-llc-west-berlin-nj" target="_blank" rel="noopener noreferrer">Nextdoor</a>
+      </div>
+      <p class="footer-meta">© 2026 Will's Home Remodeling LLC · Palmyra, New Jersey · NJ HIC Reg. #13VH08394500</p>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+18564263629">Call Will · (856) 426-3629</a>
+
+  <script>
+
+    const form = document.getElementById('estimate-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      status.className = 'form-status';
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        status.textContent = 'Please complete the required fields.';
+        return;
+      }
+      const data = new FormData(form);
+      const subject = encodeURIComponent(`Project request from ${data.get('name')}`);
+      const body = encodeURIComponent([
+        `Name: ${data.get('name')}`,
+        `Phone: ${data.get('phone')}`,
+        `Town: ${data.get('town')}`,
+        `Project type: ${data.get('project')}`,
+        '',
+        data.get('details')
+      ].join('\n'));
+      status.classList.add('success');
+      status.textContent = 'Opening your email app with the project details filled in.';
+      window.location.href = `mailto:ferris-william@comcast.net?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>

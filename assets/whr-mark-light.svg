@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="132" viewBox="0 0 180 132" role="img" aria-labelledby="title desc">
+  <title id="title">WHR roofline mark</title>
+  <desc id="desc">The initials WHR below a strong house roofline.</desc>
+  <path d="M10 47L90 10L170 47" fill="none" stroke="#2d2825" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+  <text x="90" y="102" text-anchor="middle" fill="#2d2825" font-family="Arial Narrow, Helvetica Condensed, sans-serif" font-size="64" font-weight="900" letter-spacing="-4">WHR</text>
+  <path d="M20 120H160" stroke="#651d27" stroke-width="7"/>
+</svg>
