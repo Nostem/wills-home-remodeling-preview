@@ -157,19 +157,6 @@
       color: var(--parchment-50);
       background: var(--oxblood-900);
     }
-    .hero::after {
-      content: "PROJECT 01";
-      position: absolute;
-      right: -.2em;
-      bottom: -.18em;
-      color: oklch(34% 0.088 20);
-      font-family: var(--font-display);
-      font-size: clamp(6rem, 18vw, 18rem);
-      font-weight: 900;
-      line-height: .75;
-      white-space: nowrap;
-      pointer-events: none;
-    }
     .hero-grid {
       position: relative;
       z-index: 2;
@@ -243,7 +230,7 @@
       height: 100%;
       min-height: 28rem;
       object-fit: cover;
-      object-position: 48% center;
+      object-position: 60% center;
       filter: saturate(.82) contrast(1.03);
     }
 
@@ -266,16 +253,6 @@
       font-weight: 900;
       text-align: center;
     }
-    .measure-rule {
-      position: relative;
-      z-index: 3;
-      height: 3.5rem;
-      border-top: 2px solid var(--brass-500);
-      border-bottom: 2px solid var(--brass-500);
-      background-image: repeating-linear-gradient(90deg, transparent 0 1.48rem, var(--brass-600) 1.5rem 1.56rem);
-      opacity: .68;
-    }
-
     .proof-bar { background: var(--charcoal-950); color: var(--parchment-50); }
     .proof-grid { display: grid; }
     .proof {
@@ -559,17 +536,16 @@
           <p class="hero-lead">Bathrooms, kitchens, tile, flooring, decks, drywall, and practical home improvements from an owner-led New Jersey remodeling business.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Request an estimate</a>
-            <a class="btn btn-secondary" href="tel:+18564263629">Call Will</a>
+            <a class="btn btn-secondary" href="tel:+185****3629">Call (856) 426-3629</a>
           </div>
           <div class="hero-registration">
             <div><strong>Active NJ home-improvement registration</strong><br>HIC Reg. #13VH08394500</div>
           </div>
         </div>
         <div class="hero-photo-wrap reveal">
-          <img class="hero-photo" src="assets/project-vanity.jpg" width="1080" height="1140" alt="Finished double-sink bathroom vanity with brass fixtures and herringbone tile floor">
+          <img class="hero-photo" src="assets/project-deck.jpg" width="1600" height="1200" alt="Completed rear deck with white railing, lattice skirting, and centered stairs">
         </div>
       </div>
-      <div class="measure-rule" aria-hidden="true"></div>
     </section>
 
     <aside class="proof-bar" aria-label="Public business trust signals">
@@ -578,7 +554,7 @@
           <strong>4.8 / 59</strong><span>Thumbtack rating and reviews</span>
         </a>
         <a class="proof" href="https://nextdoor.com/pages/wills-home-remodeling-llc-west-berlin-nj" target="_blank" rel="noopener noreferrer">
-          <strong>2025</strong><span>Nextdoor Neighborhood Faves post</span>
+          <strong>2025</strong><span>Nextdoor Neighborhood Faves recognition</span>
         </a>
         <a class="proof" href="https://www.facebook.com/willshomeremodeling" target="_blank" rel="noopener noreferrer">
           <strong>100%</strong><span>Recommend on Facebook, 12 reviews</span>
@@ -592,9 +568,9 @@
     <section class="section-pad" id="services">
       <div class="shell services-layout">
         <div class="services-heading reveal">
-          <div class="section-label">What Will does</div>
+          <div class="section-label">Remodeling services</div>
           <h2>One call. A wide range of work.</h2>
-          <p class="section-intro">From full-room updates to focused repairs, Will handles interior and exterior work with an emphasis on bathrooms, tile, and finish details.</p>
+          <p class="section-intro">Projects range from full-room renovations to focused repairs, with particular strength in bathrooms, tile, and detailed finish work.</p>
         </div>
         <div class="service-list reveal">
           <article class="service-row">
@@ -619,14 +595,14 @@
     <section class="feature-work section-pad" id="work">
       <div class="shell feature-work-grid">
         <div class="feature-copy reveal">
-          <div class="section-label">Recent work</div>
+          <div class="section-label">Recent projects</div>
           <h2>Good work shows in the details.</h2>
-          <p>Clean tile lines, thoughtful layouts, and practical improvements that make a room work better every day.</p>
+          <p>Recent work includes bathroom renovations, detailed tile installation, exterior repairs, and finish carpentry.</p>
           <div class="project-notes">
-            <div class="project-note"><strong>Recent post</strong><span>Bathroom remodel in Voorhees</span></div>
-            <div class="project-note"><strong>Recent post</strong><span>Powder-room retile, before and after</span></div>
-            <div class="project-note"><strong>Recent post</strong><span>Exterior porch, window, and door work</span></div>
-            <div class="project-note"><strong>Recent post</strong><span>Tiled fireplace, before and after</span></div>
+            <div class="project-note"><strong>Bathroom</strong><span>Voorhees renovation featuring updated tile, shower, vanity, and fixtures.</span></div>
+            <div class="project-note"><strong>Powder room</strong><span>Patterned wall tile with an updated vanity, mirror, lighting, and flooring.</span></div>
+            <div class="project-note"><strong>Exterior</strong><span>Porch repair with window and exterior-door installation.</span></div>
+            <div class="project-note"><strong>Fireplace</strong><span>Herringbone tile surround paired with gray wood-look flooring.</span></div>
           </div>
         </div>
         <div class="feature-image reveal">
@@ -641,11 +617,11 @@
           <img src="assets/project-fireplace.jpg" width="1000" height="1170" alt="Finished fireplace surround with herringbone tile and gray wood-look flooring">
         </div>
         <div class="range-copy reveal">
-          <div class="section-label">Broad capability</div>
-          <h2>Details that change a room.</h2>
-          <p class="section-intro">Bathrooms and tile are a strong part of the work, with the experience to take on kitchens, flooring, drywall, decks, windows, doors, and other home improvements.</p>
-          <div class="capability-tags" aria-label="Service capabilities">
-            <span>Bathrooms</span><span>Kitchens</span><span>Backsplashes</span><span>Flooring</span><span>Drywall</span><span>Basements</span><span>Decks</span><span>Windows</span><span>Doors</span>
+          <div class="section-label">Fireplace and flooring</div>
+          <h2>A polished focal point.</h2>
+          <p class="section-intro">A herringbone tile surround gives the fireplace a clean, finished presence, paired with gray wood-look flooring to carry the updated palette through the room.</p>
+          <div class="capability-tags" aria-label="Project details">
+            <span>Herringbone tile</span><span>Fireplace surround</span><span>Wood-look flooring</span><span>Finish work</span>
           </div>
         </div>
       </div>
@@ -658,8 +634,8 @@
         </div>
         <div class="owner-copy reveal">
           <div class="section-label">Owner-led remodeling</div>
-          <h2>A real name behind the work.</h2>
-          <p>Will's Home Remodeling LLC is owned by William Ferris and based in Palmyra, New Jersey. Call or email Will directly to talk through the room, repair, or improvement you have in mind.</p>
+          <h2>Owner-led from estimate to completion.</h2>
+          <p>Will's Home Remodeling LLC is owned by William Ferris and based in Palmyra, New Jersey. Contact William directly to discuss the room, repair, or improvement you are considering.</p>
           <div class="owner-facts">
             <div class="owner-fact"><strong>Owner</strong><span>William Ferris</span></div>
             <div class="owner-fact"><strong>Based in</strong><span>Palmyra, New Jersey</span></div>
@@ -672,13 +648,13 @@
 
     <section class="process section-pad">
       <div class="shell">
-        <div class="section-label reveal">Simple contact path</div>
+        <div class="section-label reveal">Project process</div>
         <h2 class="reveal">From idea to estimate.</h2>
         <div class="process-grid reveal">
-          <article class="process-step"><strong>01</strong><div><h3>Tell Will</h3><p>Share the room, repair, or improvement you are considering.</p></div></article>
-          <article class="process-step"><strong>02</strong><div><h3>Schedule</h3><p>Arrange a time to discuss the work and inspect the space.</p></div></article>
-          <article class="process-step"><strong>03</strong><div><h3>Review</h3><p>Confirm the scope, material expectations, timing, and estimate.</p></div></article>
-          <article class="process-step"><strong>04</strong><div><h3>Build</h3><p>Move forward once the project details are clear and approved.</p></div></article>
+          <article class="process-step"><strong>01</strong><div><h3>Discuss</h3><p>Speak with William about the room, repair, or improvement you are considering.</p></div></article>
+          <article class="process-step"><strong>02</strong><div><h3>Site visit</h3><p>Schedule a convenient time to review the space and project requirements.</p></div></article>
+          <article class="process-step"><strong>03</strong><div><h3>Review scope</h3><p>Confirm the proposed work, material expectations, timing, and estimate.</p></div></article>
+          <article class="process-step"><strong>04</strong><div><h3>Begin work</h3><p>Schedule the project once the scope and estimate are approved.</p></div></article>
         </div>
       </div>
     </section>
@@ -688,7 +664,7 @@
         <div class="contact-copy reveal">
           <div class="section-label">Start a conversation</div>
           <h2>What do you want to improve?</h2>
-          <p>Call Will directly or send the project details below to start the conversation.</p>
+          <p>Call to speak with William Ferris or send the project details below to begin the estimate process.</p>
           <div class="direct-links">
             <a href="tel:+18564263629">(856) 426-3629</a>
             <a href="mailto:ferris-william@comcast.net">ferris-william@comcast.net</a>
@@ -723,7 +699,7 @@
     </div>
   </footer>
 
-  <a class="mobile-call" href="tel:+18564263629">Call Will · (856) 426-3629</a>
+  <a class="mobile-call" href="tel:+18564263629">Call (856) 426-3629</a>
 
   <script>
 
