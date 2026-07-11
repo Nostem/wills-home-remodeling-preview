@@ -343,13 +343,55 @@
     .feature-image { position: relative; min-height: 31rem; border: 1px solid var(--brass-500); }
     .feature-image img { width: 100%; height: 100%; min-height: 31rem; object-fit: cover; object-position: center; }
 
-    .range-grid { display: grid; gap: var(--space-2xl); align-items: center; }
-    .range-image { position: relative; min-height: 28rem; border: 1px solid var(--charcoal-950); border-right-width: .65rem; }
-    .range-image img { width: 100%; height: 100%; min-height: 28rem; object-fit: cover; object-position: center; }
-    .range-copy h2 { max-width: 9ch; }
-    .range-copy .section-intro { max-width: 34rem; }
-    .capability-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.6rem; }
-    .capability-tags span {
+    .project-carousel { overflow: hidden; }
+    .carousel-viewport { overflow: hidden; touch-action: pan-y; }
+    .carousel-track {
+      display: flex;
+      align-items: stretch;
+      transition: transform 560ms cubic-bezier(.16, 1, .3, 1);
+      will-change: transform;
+    }
+    .project-slide {
+      min-width: 100%;
+      display: grid;
+      gap: var(--space-2xl);
+      align-items: center;
+      flex: 0 0 100%;
+    }
+    .comparison {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem;
+    }
+    .comparison-frame {
+      position: relative;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background: var(--charcoal-900);
+      border: 1px solid var(--charcoal-950);
+    }
+    .comparison-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .comparison-label {
+      position: absolute;
+      left: .55rem;
+      top: .55rem;
+      z-index: 1;
+      padding: .35rem .55rem;
+      color: var(--parchment-50);
+      background: var(--oxblood-800);
+      font-family: var(--font-display);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .project-copy h2 { max-width: 9ch; }
+    .project-copy .section-intro { max-width: 34rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.6rem; }
+    .project-tags span {
       padding: .55rem .75rem;
       border: 1px solid var(--charcoal-500);
       color: var(--charcoal-900);
@@ -357,6 +399,50 @@
       font-weight: 700;
       letter-spacing: .05em;
       text-transform: uppercase;
+    }
+    .carousel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .8rem;
+      margin-top: 1.4rem;
+    }
+    .carousel-button {
+      width: 3.25rem;
+      height: 3.25rem;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      color: var(--parchment-50);
+      background: var(--charcoal-950);
+      border: 1px solid var(--charcoal-950);
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 180ms ease, background 180ms ease;
+    }
+    .carousel-button:hover:not(:disabled) { color: var(--charcoal-950); background: var(--brass-500); }
+    .carousel-button:disabled { opacity: .35; cursor: not-allowed; }
+    .carousel-count {
+      min-width: 4.8rem;
+      color: var(--oxblood-800);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-align: center;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .owner { color: var(--charcoal-950); background: var(--brass-500); }
@@ -449,7 +535,9 @@
       font-weight: 900;
       letter-spacing: .06em;
       text-transform: uppercase;
+      transition: transform 220ms cubic-bezier(.16, 1, .3, 1), opacity 180ms ease;
     }
+    .mobile-call.is-hidden { opacity: 0; transform: translateY(calc(100% + 2rem)); pointer-events: none; }
 
 
     @media (min-width: 42rem) {
@@ -480,7 +568,7 @@
       .service-row { grid-template-columns: 4rem 17rem 1fr; align-items: start; padding-block: 1.55rem; }
       .service-row p { grid-column: auto; margin-top: 0; }
       .feature-work-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; }
-      .range-grid { grid-template-columns: 1.15fr .85fr; gap: 4.5rem; }
+      .project-slide { grid-template-columns: 1.15fr .85fr; gap: 4.5rem; }
       .owner-grid { grid-template-columns: .78fr 1.22fr; gap: 4.5rem; }
       .process-grid { grid-template-columns: repeat(4, 1fr); }
       .process-step { display: block; padding: 1.5rem; border-right: 1px solid var(--line-light); border-bottom: 0; }
@@ -611,18 +699,142 @@
       </div>
     </section>
 
-    <section class="section-pad">
-      <div class="shell range-grid">
-        <div class="range-image reveal">
-          <img src="assets/project-fireplace.jpg" width="1000" height="1170" alt="Finished fireplace surround with herringbone tile and gray wood-look flooring">
-        </div>
-        <div class="range-copy reveal">
-          <div class="section-label">Fireplace and flooring</div>
-          <h2>A polished focal point.</h2>
-          <p class="section-intro">A herringbone tile surround gives the fireplace a clean, finished presence, paired with gray wood-look flooring to carry the updated palette through the room.</p>
-          <div class="capability-tags" aria-label="Project details">
-            <span>Herringbone tile</span><span>Fireplace surround</span><span>Wood-look flooring</span><span>Finish work</span>
+    <section class="project-carousel section-pad" aria-label="Before and after project gallery">
+      <div class="shell">
+        <div class="carousel-viewport" id="project-carousel" tabindex="0" aria-roledescription="carousel">
+          <div class="carousel-track">
+            <article class="project-slide" data-title="Fireplace and flooring" aria-hidden="false">
+              <div class="comparison" aria-label="Fireplace before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-fireplace-before.jpg" width="443" height="590" alt="Fireplace before the tile update, with a plain black surround and hearth">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-fireplace-after.jpg" width="1000" height="1170" alt="Fireplace after the update, with herringbone tile and gray wood-look flooring">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">Fireplace and flooring</div>
+                <h2>A polished focal point.</h2>
+                <p class="section-intro">A plain black surround was replaced with herringbone tile, a coordinated hearth, and gray wood-look flooring for a cleaner, finished focal point.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Herringbone tile</span><span>Fireplace surround</span><span>Wood-look flooring</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-slide" data-title="Powder-room renovation" aria-hidden="true">
+              <div class="comparison" aria-label="Powder room before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-powder-before.jpg" width="1050" height="1400" alt="Powder room before renovation with green wall tile, an older vanity, and patterned floor">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-powder-after.jpg" width="1050" height="1400" alt="Powder room after renovation with patterned wall tile, navy vanity, new mirror, lighting, and flooring">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">Powder-room renovation</div>
+                <h2>A brighter, cleaner finish.</h2>
+                <p class="section-intro">The dated green tile and vanity were replaced with patterned wall tile, a navy vanity, updated lighting and mirrors, and gray flooring.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Patterned tile</span><span>Vanity and mirror</span><span>Lighting</span><span>Flooring</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-slide" data-title="Tub-to-shower conversion" aria-hidden="true">
+              <div class="comparison" aria-label="Bathroom shower before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-shower-before.jpg" width="1050" height="1400" alt="Bathroom before renovation with a bathtub and shower curtain">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-shower-after.jpg" width="1050" height="1400" alt="Bathroom after renovation with tiled walk-in shower, glass enclosure, niche, and brass fixtures">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">Bathroom renovation</div>
+                <h2>From tub to walk-in shower.</h2>
+                <p class="section-intro">The existing tub surround was converted into a tiled walk-in shower with a glass enclosure, built-in niche, hex floor tile, and brass fixtures.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Walk-in shower</span><span>Glass enclosure</span><span>Tile niche</span><span>Brass fixtures</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-slide" data-title="Paint and lighting update" aria-hidden="true">
+              <div class="comparison" aria-label="Paint and lighting before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-lighting-before.jpg" width="1050" height="1400" alt="Dining room ceiling during painting before the new light fixture was installed">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-lighting-after.jpg" width="1050" height="1400" alt="Dining room after painting with a dark ceiling and new chandelier">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">Paint and lighting</div>
+                <h2>A room defined from above.</h2>
+                <p class="section-intro">A dark painted ceiling and sculptural chandelier add contrast, focus, and a more finished presence to the dining area.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Ceiling paint</span><span>Light fixture</span><span>Two-tone walls</span><span>Finish work</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-slide" data-title="Porch and deck refresh" aria-hidden="true">
+              <div class="comparison" aria-label="Porch and deck before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-porch-before.jpg" width="1050" height="1400" alt="Front porch before rebuilding with weathered brown decking and lattice">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-porch-after.jpg" width="1050" height="1400" alt="Front porch after rebuilding with gray decking, white railing, steps, and refreshed lattice">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">Porch and deck refresh</div>
+                <h2>A cleaner, stronger entry.</h2>
+                <p class="section-intro">The porch surface and steps were rebuilt in gray, with refreshed white railing and lattice work for a durable, finished entrance.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Decking</span><span>Steps</span><span>Railing</span><span>Lattice</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-slide" data-title="New deck build" aria-hidden="true">
+              <div class="comparison" aria-label="New deck build before and after">
+                <figure class="comparison-frame">
+                  <span class="comparison-label">Before</span>
+                  <img src="assets/project-deck-before.jpg" width="1600" height="1200" alt="Back of the home before deck construction, with an open dirt work area">
+                </figure>
+                <figure class="comparison-frame">
+                  <span class="comparison-label">After</span>
+                  <img src="assets/project-deck.jpg" width="1600" height="1200" alt="Completed raised deck with white railing, lattice skirting, and centered stairs">
+                </figure>
+              </div>
+              <div class="project-copy">
+                <div class="section-label">New deck build</div>
+                <h2>Outdoor space, built from the ground up.</h2>
+                <p class="section-intro">An open yard was transformed with a full-width raised deck, white railing, lattice skirting, and centered stairs.</p>
+                <div class="project-tags" aria-label="Project details">
+                  <span>Deck construction</span><span>Railing</span><span>Stairs</span><span>Lattice skirting</span>
+                </div>
+              </div>
+            </article>
           </div>
+        </div>
+        <div class="carousel-footer">
+          <span class="sr-only" id="project-status" aria-live="polite">Fireplace and flooring, project 1 of 6</span>
+          <button class="carousel-button" id="project-prev" type="button" aria-label="Previous project" disabled>←</button>
+          <span class="carousel-count" id="project-count" aria-hidden="true">01 / 06</span>
+          <button class="carousel-button" id="project-next" type="button" aria-label="Next project">→</button>
         </div>
       </div>
     </section>
@@ -702,6 +914,66 @@
   <a class="mobile-call" href="tel:+18564263629">Call (856) 426-3629</a>
 
   <script>
+    const carousel = document.getElementById('project-carousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = [...carousel.querySelectorAll('.project-slide')];
+      const previous = document.getElementById('project-prev');
+      const next = document.getElementById('project-next');
+      const count = document.getElementById('project-count');
+      const carouselStatus = document.getElementById('project-status');
+      let projectIndex = 0;
+      let pointerStart = null;
+
+      const showProject = (nextIndex) => {
+        projectIndex = Math.max(0, Math.min(nextIndex, slides.length - 1));
+        track.style.transform = `translate3d(-${projectIndex * 100}%, 0, 0)`;
+        slides.forEach((slide, index) => slide.setAttribute('aria-hidden', String(index !== projectIndex)));
+        previous.disabled = projectIndex === 0;
+        next.disabled = projectIndex === slides.length - 1;
+        count.textContent = `${String(projectIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+        carouselStatus.textContent = `${slides[projectIndex].dataset.title}, project ${projectIndex + 1} of ${slides.length}`;
+      };
+
+      previous.addEventListener('click', () => showProject(projectIndex - 1));
+      next.addEventListener('click', () => showProject(projectIndex + 1));
+      carousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showProject(projectIndex - 1);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showProject(projectIndex + 1);
+        }
+        if (event.key === 'Home') {
+          event.preventDefault();
+          showProject(0);
+        }
+        if (event.key === 'End') {
+          event.preventDefault();
+          showProject(slides.length - 1);
+        }
+      });
+      carousel.addEventListener('pointerdown', (event) => { pointerStart = event.clientX; });
+      carousel.addEventListener('pointerup', (event) => {
+        if (pointerStart === null) return;
+        const distance = event.clientX - pointerStart;
+        pointerStart = null;
+        if (Math.abs(distance) < 45) return;
+        showProject(projectIndex + (distance < 0 ? 1 : -1));
+      });
+      carousel.addEventListener('pointercancel', () => { pointerStart = null; });
+
+      const mobileCall = document.querySelector('.mobile-call');
+      const carouselSection = carousel.closest('.project-carousel');
+      if (mobileCall && carouselSection && 'IntersectionObserver' in window) {
+        const callObserver = new IntersectionObserver(([entry]) => {
+          mobileCall.classList.toggle('is-hidden', entry.isIntersecting);
+        }, { threshold: .08 });
+        callObserver.observe(carouselSection);
+      }
+    }
 
     const form = document.getElementById('estimate-form');
     const status = document.getElementById('form-status');
